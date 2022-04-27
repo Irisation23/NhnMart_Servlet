@@ -7,12 +7,13 @@ import java.util.List;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+@WebServlet(name = "foodsServlet" , urlPatterns = "/foods")
 public class FoodsServlet extends HttpServlet {
-    List<Food> foodList;
+    private List<Food> foodList;
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -23,7 +24,7 @@ public class FoodsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+        throws IOException {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
 

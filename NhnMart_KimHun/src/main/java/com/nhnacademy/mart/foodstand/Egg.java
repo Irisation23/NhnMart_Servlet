@@ -19,6 +19,11 @@ public class Egg implements Food{
     }
 
     @Override
+    public void deductFood(int basketCnt) {
+        this.quantity -= basketCnt;
+    }
+
+    @Override
     public String toString() {
         return "Egg{" +
             "price=" + price +

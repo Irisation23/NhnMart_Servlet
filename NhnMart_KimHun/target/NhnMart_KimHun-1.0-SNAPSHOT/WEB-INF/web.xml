@@ -8,48 +8,5 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>initServlet</servlet-name>
-        <servlet-class>com.nhnacademy.mart.servlet.InitServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>initServlet</servlet-name>
-        <url-pattern>/init</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>foodsServlet</servlet-name>
-        <servlet-class>com.nhnacademy.mart.servlet.FoodsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>foodsServlet</servlet-name>
-        <url-pattern>/foods</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>cartServlet</servlet-name>
-        <servlet-class>com.nhnacademy.mart.servlet.CartServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>cartServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
-    </servlet-mapping>
-
-    <context-param>
-        <param-name>onion</param-name>
-        <param-value>2</param-value>
-    </context-param>
-    <context-param>
-        <param-name>egg</param-name>
-        <param-value>5</param-value>
-    </context-param>
-    <context-param>
-        <param-name>greenOnion</param-name>
-        <param-value>10</param-value>
-    </context-param>
-    <context-param>
-        <param-name>apple</param-name>
-        <param-value>20</param-value>
-    </context-param>
 </web-app>
 

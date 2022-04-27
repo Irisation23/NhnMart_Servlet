@@ -20,6 +20,11 @@ public class Apple implements Food{
     }
 
     @Override
+    public void deductFood(int basketCnt) {
+        this.quantity -= basketCnt;
+    }
+
+    @Override
     public String toString() {
         return "Apple{" +
             "price=" + price +

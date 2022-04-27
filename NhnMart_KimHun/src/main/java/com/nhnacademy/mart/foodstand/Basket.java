@@ -19,11 +19,11 @@ public class Basket {
         return true;
     }
 
-    public int calcToMoney() {
+    public int calcToMoney(List<Food> foodList) {
         int amount = 0;
-
         for (int i = 0; i < basketFoods.size(); i++) {
             amount += basketFoods.get(i).getPrice() * basketFoods.get(i).getQuantity();
+            foodList.get(i).deductFood(basketFoods.get(i).getQuantity());
         }
 
         return amount;

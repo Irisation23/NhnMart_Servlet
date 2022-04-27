@@ -4,7 +4,6 @@ import com.nhnacademy.mart.foodstand.Apple;
 import com.nhnacademy.mart.foodstand.Basket;
 import com.nhnacademy.mart.foodstand.Egg;
 import com.nhnacademy.mart.foodstand.Food;
-import com.nhnacademy.mart.foodstand.FoodStand;
 import com.nhnacademy.mart.foodstand.GreenOnion;
 import com.nhnacademy.mart.foodstand.Onion;
 import java.io.IOException;
@@ -14,11 +13,12 @@ import java.util.List;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
-
+@WebServlet(name = "cartServlet" , urlPatterns = "/cart" )
 public class CartServlet extends HttpServlet {
     List<Food> foodList;
     int totalAmount;
@@ -32,7 +32,7 @@ public class CartServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+        throws IOException {
 
         int onionNum = Integer.parseInt(req.getParameter("onion"));
         int eggNum = Integer.parseInt(req.getParameter("egg"));
@@ -60,7 +60,7 @@ public class CartServlet extends HttpServlet {
         }
 
         // 계산 할 금액.
-        totalAmount = basket.calcToMoney();
+        totalAmount = basket.calcToMoney(foodList);
 
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");
@@ -73,7 +73,7 @@ public class CartServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+        throws IOException {
 
         resp.setContentType("text/html");
         resp.setCharacterEncoding("UTF-8");

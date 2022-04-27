@@ -17,7 +17,10 @@ public class Onion implements Food{
     public int getQuantity() {
         return quantity;
     }
-
+    @Override
+    public void deductFood(int basketCnt) {
+        this.quantity -= basketCnt;
+    }
     @Override
     public String toString() {
         return "Onion{" +
